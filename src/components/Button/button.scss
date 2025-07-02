@@ -1,0 +1,40 @@
+.button {
+  @include flex-center(true);
+  padding: fluid-to-laptop(18, 14) fluid-to-laptop(24, 20);
+  font-weight: 600;
+  column-gap: 4px;
+  background-color: var(--color-red-45);
+  color: var(--color-white);
+  border-radius: fluid-to-laptop(8, 6);
+  user-select: none;
+  cursor: pointer;
+
+  @include hover {
+    color: var(--color-white);
+    background-color: var(--color-red-60);
+  }
+
+  &:active {
+    scale: 1.04;
+  }
+  &:disabled {
+    background-color: var(--color-gray-65);
+    pointer-events: none;
+  }
+  &__icon {
+    display: flex;
+  }
+  &--transparent {
+    background-color: transparent;
+    padding: 10px;
+    @include hover {
+      background-color: transparent;
+      color: var(--color-red-60);
+    }
+  }
+}
+
+.icon {
+  --iconSize: #{fluid-to-laptop(28, 24)};
+  @include square(var(--iconSize));
+}

@@ -4,4 +4,60 @@
   z-index: 100;
   top: 0;
   width: 100%;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0 150px;
+  border-bottom: 1px solid transparent;
+
+  @keyframes scrolling-header {
+    to {
+      padding-block: 14px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      border: var(--border);
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+  }
+  &__menu {
+    &-list {
+      padding: fluid-to-laptop(10, 8);
+      background-color: var(--color-dark-06);
+      border-radius: fluid-to-laptop(12, 10);
+      border: var(--border);
+      border-width: 2px;
+      display: flex;
+      column-gap: 6px;
+      align-items: center;
+    }
+    &-link {
+      padding-block: fluid-to-laptop(14, 12);
+      padding-inline: fluid-to-laptop(24, 20);
+      border-radius: 8px;
+      @include hover {
+        background-color: var(--color-red-60);
+        color: var(--color-white);
+      }
+      &.is-active {
+        background-color: var(--color-dark-10);
+        color: var(--color-white);
+        font-weight: 500;
+        pointer-events: none;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(18, 10);
+  }
+  &__icon {
+    --iconSize: #{fluid-to-laptop(28, 24)};
+    @include square(var(--iconSize));
+  }
 }

@@ -4,7 +4,7 @@ import Content from "@/layouts/Content"
 import Footer from "@/layouts/Footer"
 import Header from "@/layouts/Header"
 
-export default function ({ children, title }) {
+export default function ({ children, title, url }) {
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function ({ children, title }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Header />
+      <Header url={url} />
       <Content>
         {children}
       </Content>
