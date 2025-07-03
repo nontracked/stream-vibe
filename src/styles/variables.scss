@@ -1,3 +1,4 @@
+@use "./helpers/" as *;
 :root {
   --color-white: #ffffff;
   --color-black: #000000;
@@ -43,8 +44,8 @@
   --border-4: 4px;
 
   --font-family-base: "Manrope", sans-serif;
-  --container-width: #{fluid-to-laptop($container-desktop-width, $container-laptop-width)};
-  //1600 и 1280
+
+  --container-width: 1600px;
 
   --container-padding-x: 16px; // берем с мобильной версии
 
@@ -53,7 +54,7 @@
   --transition-duration: 0.2s;
   --transition-duration-longer: 0.4s;
 
-  // @include laptop {
-  //   --container-width: 1280px; //1600 и 1280
-  // }
+  @include laptop {
+    --container-width: 1200px;
+  }
 }

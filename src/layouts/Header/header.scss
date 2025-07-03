@@ -25,23 +25,42 @@
     column-gap: 30px;
   }
   &__menu {
+    @include tablet {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      overflow-y: scroll;
+    }
     &-list {
-      padding: fluid-to-laptop(10, 8);
-      background-color: var(--color-dark-06);
-      border-radius: fluid-to-laptop(12, 10);
-      border: var(--border);
-      border-width: 2px;
       display: flex;
       column-gap: 6px;
       align-items: center;
+
+      @include tablet-above {
+        padding: fluid-to-laptop(10, 8);
+        background-color: var(--color-dark-06);
+        border-radius: fluid-to-laptop(12, 10);
+        border: var(--border);
+      }
+      @include tablet {
+        flex-direction: column;
+        row-gap: 15px;
+        margin-block: auto;
+      }
     }
     &-link {
       padding-block: fluid-to-laptop(14, 12);
       padding-inline: fluid-to-laptop(24, 20);
+      color: var(--color-gray-75);
       border-radius: 8px;
       @include hover {
         background-color: var(--color-red-60);
         color: var(--color-white);
+      }
+      @include tablet {
+        font-size: 20px;
       }
       &.is-active {
         background-color: var(--color-dark-10);
@@ -51,13 +70,48 @@
       }
     }
   }
+  &__overlay-menu-dialog {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-20);
+    border: none;
+    padding: 16px;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    row-gap: 30px;
+    transition-duration: var(--transition-duration);
+    transition-behavior: allow-discrete;
+    &:not([open]) {
+      opacity: 0;
+      translate: 50%;
+    }
+    &[open] {
+      display: flex;
+      @starting-style {
+        opacity: 0;
+        translate: 50%;
+      }
+    }
+    @include tablet-above {
+      display: contents;
+    }
+  }
   &__actions {
     display: flex;
     align-items: center;
     column-gap: fluid-to-laptop(18, 10);
+    @include tablet {
+      column-gap: 20px;
+    }
   }
   &__icon {
     --iconSize: #{fluid-to-laptop(28, 24)};
     @include square(var(--iconSize));
+  }
+  &__burger-button {
+    position: relative;
   }
 }
