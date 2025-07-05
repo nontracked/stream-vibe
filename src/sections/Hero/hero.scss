@@ -1,0 +1,39 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  @include mobile {
+    min-width: 375px;
+  }
+  &__panno {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background:
+      linear-gradient(var(--color-dark-08) 0%, transparent 67.5%),
+      linear-gradient(to top, var(--color-dark-08) 0%, transparent 67.5%),
+      url("../../src/assets/images/hero/hero-bac.png") 50% / cover;
+  }
+  &__play-button {
+    padding: 0;
+    background-color: transparent;
+    @include square(fluid(470, 200));
+    border: none;
+  }
+  &__title {
+    margin-top: -1em;
+  }
+  &__body {
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(50, 30);
+      align-items: center;
+      &-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid-to-laptop(14, 10);
+      }
+    }
+  }
+}
