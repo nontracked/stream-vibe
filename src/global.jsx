@@ -18,6 +18,7 @@ export default function ({ children, title, url }) {
       </Head>
       <Header url={url} />
       <Content>
+
         {children}
       </Content>
       <Footer />

@@ -8,13 +8,13 @@
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 0 150px;
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
 
   @keyframes scrolling-header {
     to {
       padding-block: 14px;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(8px);
+      background-color: rgb(0 0 0 / 0.5);
       border: var(--border);
     }
   }
@@ -114,4 +114,8 @@
   &__burger-button {
     position: relative;
   }
+}
+
+.filter-none {
+  backdrop-filter: none;
 }

@@ -7,7 +7,8 @@ class OverlayMenu {
 
   stateClasses = {
     isActive: 'is-active',
-    isLock: 'is-lock'
+    isLock: 'is-lock',
+    filterNone: 'filter-none'
   }
 
   constructor() {
@@ -19,6 +20,7 @@ class OverlayMenu {
 
   onBurgerButtonClick = () => {
     this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
+    this.rootElement.classList.toggle(this.stateClasses.filterNone)
     this.dialogElement.open = !this.dialogElement.open
     document.documentElement.classList.toggle(this.stateClasses.isLock)
   }

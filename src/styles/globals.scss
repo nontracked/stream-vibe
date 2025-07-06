@@ -95,3 +95,7 @@ a {
 li {
   list-style-type: none;
 }
+
+.section {
+  padding-bottom: var(--section-padding-bottom);
+}

@@ -1,12 +1,12 @@
 import Button from '@/components/Button'
 import './hero.scss'
-import { ChevronRight, Play } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 export const Hero = () => {
   const titleId = "hero-title"
   const playButtonTitle = "Play Video"
   return (
-    <section className="hero" aria-labelledby={titleId}>
+    <section className="hero section" aria-labelledby={titleId}>
       <div className="hero__panno">
         <div className="hero__panno-inner container">
           <button
