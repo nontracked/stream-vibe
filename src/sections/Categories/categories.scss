@@ -1,0 +1,35 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(80, 40);
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &:has(.categories__desc) {
+      align-items: flex-end;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid-to-laptop(14, 10);
+  }
+  &__action {
+    white-space: nowrap;
+    @include mobile {
+      align-self: flex-start;
+    }
+  }
+  &__body {
+    display: flex;
+    column-gap: fluid-to-laptop(30, 20);
+  }
+}
