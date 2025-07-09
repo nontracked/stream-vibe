@@ -1,0 +1,52 @@
+.device-card {
+  display: grid;
+  row-gap: fluid(30, 24);
+  padding: fluid(50, 20);
+  border-radius: fluid-to-laptop(12, 10);
+  background: linear-gradient(222deg, rgba(229, 0, 0, 0.5) -208.03%, rgba(229, 0, 0, 0) 41.32%), #0f0f0f;
+  border: var(--border);
+  @include laptop {
+    padding: 37px;
+  }
+  @include mobile {
+    padding: 24px;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: fluid(16, 10);
+  }
+  &__desc {
+    @include laptop {
+      font-size: 16px;
+    }
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  &__image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: fluid(12, 8);
+    border: var(--border);
+    background-color: var(--color-dark-08);
+    @include laptop {
+      padding: 12px;
+    }
+    @include mobile {
+      padding: 10px;
+    }
+  }
+  &__image {
+    @include laptop {
+      width: 30px;
+    }
+  }
+  &__title {
+    @include laptop {
+      font-size: 20px;
+    }
+  }
+}
