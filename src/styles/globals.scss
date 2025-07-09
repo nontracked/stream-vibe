@@ -100,4 +100,12 @@ li {
   padding-bottom: var(--section-padding-bottom);
 }
 
+:has(.swiper) {
+  min-width: 0;
+}
 
+.header,
+.content > *:not(:last-child),
+.footer {
+  display: none;
+}

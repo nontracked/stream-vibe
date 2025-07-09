@@ -2,7 +2,7 @@ import cn from 'classnames'
 import './button.scss'
 export const Button = (
   { href, type = 'button', target = '_blank', className, label, isLabelVusible = true, hasIcon = false, icon, iconPosition = 'before',
-    tranparent = false
+    tranparent = false, extraAttrs
   }) => {
   const isLink = href !== undefined
   const Component = isLink ? 'a' : 'button'
@@ -18,6 +18,7 @@ export const Button = (
       aria-label={title}
       title={title}
       {...specificProps}
+      {...extraAttrs}
     >
       {iconPosition === 'before' && iconComponent}
 

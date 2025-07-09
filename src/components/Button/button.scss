@@ -18,7 +18,8 @@
     scale: 1.04;
   }
   &:disabled {
-    background-color: var(--color-gray-65);
+    background-color: var(--color-dark-06);
+    cursor: progress;
     pointer-events: none;
   }
   &__icon {

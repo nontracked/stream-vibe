@@ -3,7 +3,6 @@
   padding: fluid(30, 20);
   display: inline-flex;
   color: var(--color-white);
-
   flex-direction: column;
   row-gap: fluid(10, 5);
   border-radius: fluid-to-laptop(12, 10);
@@ -18,7 +17,6 @@
       content: "";
       transition-duration: var(--transition-duration);
       @include abs-cover;
-
       background-image: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 101.79%);
       opacity: var(--gradientOpacity);
     }
@@ -26,7 +24,6 @@
   &__image {
     width: 100%;
     border-radius: fluid-to-laptop(10, 6);
-    height: fluid(124, 68);
     object-fit: cover;
   }
   &__body {
@@ -61,5 +58,8 @@
     .category-card__title {
       color: var(--color-red-60);
     }
+  }
+  &:focus-visible {
+    outline-offset: -2px;
   }
 }
