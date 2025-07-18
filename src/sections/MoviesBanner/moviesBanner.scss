@@ -1,0 +1,68 @@
+.movie-banner-card {
+  position: relative;
+  text-align: center;
+
+  &__image {
+    width: 100%;
+    min-height: fluid(835, 468);
+    object-fit: cover;
+    border: var(--border);
+    border-radius: 12px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+
+    @include laptop {
+      row-gap: 2px;
+    }
+  }
+  &__desc {
+    max-width: fluid-to-laptop(1194, 960);
+  }
+  &__inner {
+    @include abs-cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    row-gap: fluid(30, 20);
+    padding: fluid-to-laptop(126, 104) fluid(50, 24);
+    background-image: linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0) 100%);
+    @include mobile {
+      padding-block: 16px;
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    gap: 20px;
+    @include laptop {
+      padding-bottom: 10px;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__actions {
+    display: flex;
+    column-gap: 10px;
+    @include laptop {
+      column-gap: 8px;
+    }
+
+    &-button {
+      background-color: var(--color-dark-06);
+      border: var(--border);
+
+    }
+  }
+  &__button {
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

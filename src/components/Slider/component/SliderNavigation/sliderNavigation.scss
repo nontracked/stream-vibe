@@ -1,7 +1,21 @@
 .slider-navigation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  &--abs-bottom {
+    position: absolute;
+    z-index: 1;
+    inset-inline: fluid-to-laptop(50, 40);
+    bottom: fluid-to-laptop(20, 16);
+  }
+  &--rounded {
+    column-gap: fluid-to-laptop(10, 8);
 
+    .slider-navigation__arrow-button {
+      border-radius: 50%;
+      background-color: var(--color-dark-08);
+    }
+  }
   &--tile {
     column-gap: fluid-to-laptop(16, 12);
     padding: fluid-to-laptop(16, 12);

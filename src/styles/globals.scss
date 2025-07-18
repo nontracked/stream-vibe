@@ -92,9 +92,7 @@ a {
   @include focus-visible;
 }
 
-li {
-  list-style-type: none;
-}
+
 
 .section {
   padding-bottom: var(--section-padding-bottom);

@@ -1,0 +1,19 @@
+.tabs-navigation {
+  display: var(--tabsNavigationDisplay, flex);
+
+  padding: fluid-to-laptop(10, 8);
+  border: var(--border);
+  border-radius: fluid-to-laptop(10, 8);
+  &__button {
+    padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
+    border-radius: fluid-to-laptop(10, 6);
+    transition-duration: var(--transition-duration);
+    cursor: pointer;
+    user-select: none;
+
+    @include hover {
+      color: var(--color-white);
+      pointer-events: none;
+    }
+  }
+}

@@ -1,6 +1,8 @@
+import Banner from "@/sections/Banner"
 import Categories from "@/sections/Categories"
 import Devices from "@/sections/Devices"
 import Hero from "@/sections/Hero"
+import Plans from "@/sections/Plans"
 import Quastions from "@/sections/Quastions"
 
 export const metadata = {
@@ -14,6 +16,9 @@ export default function () {
       <Categories />
       <Devices />
       <Quastions />
+      <Plans />
+      <Banner />
+
     </>
   )
 }

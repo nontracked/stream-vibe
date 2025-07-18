@@ -4,12 +4,14 @@ import Button from '@/components/Button'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 export const SliderNavigation = (
-  { classname, id, hasPagination = true, mode = '', }
+  { classname, id, hasPagination = true, mode = '', position = '', isHiddenMobile }
 ) => {
   return (
     <div
       className={cn(classname, "slider-navigation", {
         [`slider-navigation--${mode}`]: mode,
+        [`slider-navigation--${position}`]: position,
+        "hidden-mobile": isHiddenMobile,
       })}
       id={id}
       data-js-slider-navigation=""

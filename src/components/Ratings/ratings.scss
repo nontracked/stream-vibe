@@ -1,0 +1,20 @@
+.ratings {
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(20, 16);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 4px;
+    padding: fluid(16, 12);
+    border: var(--border);
+    border-radius: 8px;
+    background-color: var(--color-dark-08);
+    @include mobile {
+      row-gap: 2px;
+    }
+  }
+}

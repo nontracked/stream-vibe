@@ -1,0 +1,21 @@
+.review-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid-to-laptop(20, 16);
+  padding: fluid(40, 24);
+  background-color: var(--color-dark-06);
+  border: var(--border);
+  border-radius: 12px;
+
+  &__header {
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name,
+  &__desc {
+    font-weight: 500;
+  }
+}

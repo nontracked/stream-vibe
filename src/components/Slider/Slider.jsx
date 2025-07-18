@@ -1,6 +1,7 @@
 import 'swiper/css';
 import './slider.scss'
 import SliderNavigation from './component/SliderNavigation';
+import cn from 'classnames';
 
 const defaultSliderParams = {
   slidesPerView: 5,
@@ -30,18 +31,23 @@ const defaultSliderParams = {
   }
 }
 
-export const Slider = ({ children, navigationTargetElementId = null, sliderParams = defaultSliderParams, hasScrollbar = true }) => {
+export const Slider = (
+  { flexible = false, children = [], navigationTargetElementId = null, sliderParams = defaultSliderParams, hasScrollbar = true, navigationPosition = '', isNavigationHiddenMobile = true, navigationMode, }
+) => {
   return (
     <div className="slider" data-js-slider={JSON.stringify({
       sliderParams,
-      navigationTargetElementId
+      navigationTargetElementId,
+      flexible
     })}>
       {hasScrollbar && (
         <div className="slider__scrollbar visible-mobile"
           data-js-slider-scrollbar=""></div>
       )}
-      <div className="slider__swiper swiper" data-js-slider-swiper="">
-        <ul className="slider__list swiper-wrapper">
+      <div className={cn("slider__swiper swiper", {
+        "slider__list-flex": flexible,
+      })} data-js-slider-swiper="">
+        <ul className={cn("slider__list swiper-wrapper")}>
           {children.map((slide, index) => (
             <li className="slider__item swiper-slide" key={index}>
               {slide}
@@ -50,7 +56,11 @@ export const Slider = ({ children, navigationTargetElementId = null, sliderParam
         </ul>
 
         {!navigationTargetElementId && (
-          <SliderNavigation classname="slider__navigation" />
+          <SliderNavigation classname="slider__navigation"
+            mode={navigationMode}
+            position={navigationPosition}
+            isHiddenMobile={isNavigationHiddenMobile}
+          />
         )}
 
       </div>

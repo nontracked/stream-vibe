@@ -1,0 +1,29 @@
+.person-card {
+  display: flex;
+  column-gap: fluid-to-laptop(10, 8);
+  align-items: center;
+  &__image {
+    width: fluid(102, 70);
+    border: 1px solid transparent;
+    border-radius: fluid-to-laptop(10, 8);
+    transition-duration: var(--transition-duration);
+    @include hover {
+      border: var(--border);
+    }
+    &--small {
+      width: 57px;
+      height: 60px;
+      border-radius: 6px;
+    }
+  }
+  &--background {
+    background-color: var(--color-dark-08);
+    padding: fluid(14, 10);
+    border: var(--border);
+    border-radius: 8px;
+    .person-card__name {
+      font-size: fluid-to-laptop(18, 16);
+      font-weight: 500;
+    }
+  }
+}

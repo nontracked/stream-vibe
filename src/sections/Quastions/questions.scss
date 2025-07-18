@@ -1,0 +1,11 @@
+.questions {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(80, 40);
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
