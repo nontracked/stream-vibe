@@ -1,0 +1,48 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: fluid-to-laptop(16, 12);
+  &__label {
+    font-size: fluid-to-laptop(18, 16);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  &__req-star {
+    color: var(--color-red-60);
+  }
+  &__body {
+    display: flex;
+    column-gap: fluid-to-laptop(16, 12);
+    width: 100%;
+  }
+  &__control {
+    width: 100%;
+    height: fluid-to-laptop(67, 53);
+    padding: fluid-to-laptop(20, 16);
+    color: var(--color-white);
+    background-color: var(--color-dark-08);
+    border: var(--border);
+    border-radius: fluid-to-laptop(8, 6);
+
+    @include hover {
+      border-color: var(--color-white);
+    }
+    &:user-invalid {
+      border-color: var(--color-red-60);
+    }
+    &:disabled {
+      @include disabled;
+      //       opacity: 0.5;
+      // cursor: not-allowed;
+    }
+    &::placeholder {
+      color: var(--color-gray-60);
+    }
+  }
+  textarea.field__control {
+    resize: vertical;
+    min-height: fluid(163, 109);
+    padding-block: fluid-to-laptop(20, 16);
+  }
+}

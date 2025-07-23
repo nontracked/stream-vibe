@@ -5,11 +5,10 @@ import PersonCard from "@/components/PersonCard"
 import Button from "@/components/Button"
 import { Plus } from "lucide-react"
 import ReviewCard from "@/components/ReviewCard"
-import { Icon } from "minista"
 import Tags from "@/components/Tags"
 import Ratings from "@/components/Ratings"
 
-export const MovieDetails = () => {
+export const MovieDetails = ({ seasons }) => {
   const titleId = 'movie-details-title'
   const castSliderNavigationId = 'movie-cast-navigation'
   const castItems = [
@@ -71,6 +70,14 @@ export const MovieDetails = () => {
         Detailed movie information
       </h2>
       <div className="movie-details__main">
+        {seasons && (
+          <div className="movie-details__panel movie-details__panel--seasons">
+            <div className="movie-details__group movie-details__group--seasons">
+              <h3 className="h4">Seasons and Episodes</h3>
+              {seasons}
+            </div>
+          </div>
+        )}
         <div className="movie-details__panel movie-details__panel--desc">
           <div className="movie-details__group">
             <h3 className="movie-details__title">Description</h3>
@@ -144,7 +151,7 @@ export const MovieDetails = () => {
                 <span>Released Year</span>
               </h3>
               <div className="movie-details__desc">
-                <time className="h6" datetime="2022">2022</time>
+                <time className="h6" dateTime="2022">2022</time>
               </div>
             </div>
 

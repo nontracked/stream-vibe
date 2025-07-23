@@ -1,0 +1,44 @@
+.support {
+  display: grid;
+  row-gap: 50px;
+  column-gap: fluid-to-laptop(80, 50);
+  padding-top: fluid(115, 40);
+
+  @include mobile-above {
+    grid-template-columns: 33% auto;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid(50, 30);
+  }
+  &__header {
+    display: grid;
+    row-gap: fluid-to-laptop(14, 10);
+  }
+  &__image {
+    outline: solid;
+    outline-color: var(--color-dark-15);
+    outline-width: fluid(6, 4);
+    border-radius: fluid-to-laptop(6, 5);
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__form {
+    display: grid;
+    gap: fluid(50, 20) fluid-to-laptop(50, 20);
+    padding: fluid(50, 24);
+    background-color: var(--color-dark-06);
+    border: var(--border);
+    border-radius: fluid-to-laptop(12, 10);
+    @include mobile-s-above {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-cell {
+      &--wide {
+        grid-column: -1/1;
+      }
+    }
+  }
+}

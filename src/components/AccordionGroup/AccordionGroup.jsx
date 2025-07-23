@@ -1,13 +1,14 @@
 import cn from "classnames"
 import "./accordionGroup.scss"
 
-export const AccordionGroup = ({ columns, children, isOrderedList = true }) => {
+export const AccordionGroup = ({ className, mode = '', columns, children, isOrderedList = true }) => {
   const ListTag = isOrderedList ? 'ol' : 'ul'
   const itemsPerColumn = Math.ceil(children.length / columns)
   return (
-    <ListTag className={cn("accordion-group", {
+    <ListTag className={cn(className, "accordion-group", {
       [`accordion-group--${columns}-columns`]: columns > 1,
       "accordion-group--has-counter": isOrderedList,
+      [`accordion-group--${mode}`]: mode,
     })}>
       {children.map((child, index) => (
         <li className={cn("accordion-group__item", {
