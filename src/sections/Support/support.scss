@@ -24,6 +24,10 @@
     @include mobile {
       width: 100%;
     }
+    @include tablet {
+      height: 100%;
+      object-fit: cover;
+    }
   }
   &__form {
     display: grid;
@@ -35,9 +39,31 @@
     @include mobile-s-above {
       grid-template-columns: repeat(2, 1fr);
     }
+    &-agreement {
+      @include mobile-s {
+        align-self: flex-start;
+      }
+    }
     &-cell {
       &--wide {
         grid-column: -1/1;
+      }
+      &--actions {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 25px;
+        align-items: center;
+
+        @include mobile-s {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+      }
+    }
+    &-button {
+      white-space: nowrap;
+      @include mobile-s {
+        width: 100%;
       }
     }
   }

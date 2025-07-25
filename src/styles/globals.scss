@@ -101,3 +101,15 @@ a {
 :has(.swiper) {
   min-width: 0;
 }
+
+.pt-100 {
+  padding-top: 100px;
+
+  @include tablet {
+    padding-top: 50px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+  }
+}

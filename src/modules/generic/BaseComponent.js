@@ -1,4 +1,4 @@
-class BaseComponent {
+export class BaseComponent {
   constructor() {
     if (this.constructor === BaseComponent) {
       throw new Error("Невозможно создать экземпляр абстрактного класса BaseComponent")

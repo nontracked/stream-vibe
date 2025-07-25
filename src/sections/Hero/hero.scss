@@ -14,7 +14,7 @@
     background:
       linear-gradient(var(--color-dark-08) 0%, transparent 67.5%),
       linear-gradient(to top, var(--color-dark-08) 0%, transparent 67.5%),
-      url("../../src/assets/images/hero/hero-bac.png") 50% / cover;
+      url("@/assets/images/hero/hero-bac.png") 50% / cover;
   }
   &__play-button {
     padding: 0;

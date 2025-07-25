@@ -59,7 +59,8 @@ export const Footer = () => {
                 </ul>
               )}
               {socialLinks?.length > 0 && (
-                <ul className="soc1als__menu-list">{socialLinks.map(({ iconName }, index) => (
+                <ul className="soc1als__menu-list">
+                  {socialLinks.map(({ iconName }, index) => (
                   <li className="soc1als__menu-item" key={index}>
                     <a href="" className="soc1als__menu-link">{iconName}</a>
                   </li>

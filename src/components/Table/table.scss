@@ -1,0 +1,36 @@
+table {
+  --tableBorder: var(--border);
+  border: var(--border);
+  box-shadow: 0 0 0 1px var(--color-dark-15);
+  overflow: hidden;
+  border-radius: fluid-to-laptop(12, 10);
+  width: 100%;
+  thead {
+    background-color: var(--color-dark-06);
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: fluid-to-laptop(30, 24);
+    border-bottom: var(--tableBorder);
+
+    &:not(:last-child) {
+      border-right: var(--tableBorder);
+    }
+  }
+
+  tbody {
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  th {
+    font-size: fluid-to-laptop(20, 18);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+}

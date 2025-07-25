@@ -1,8 +1,10 @@
 .tabs {
+  display: grid;
+  row-gap: 40px;
   --tabsNonActiveContentDisplay: none;
   &--enable-only-on-mobile {
     @include mobile-above {
-      --tabsNonActiveContentDisplay:block;
+      --tabsNonActiveContentDisplay: block;
       --tabsNavigationDisplay: none;
     }
   }

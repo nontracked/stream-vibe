@@ -8,11 +8,11 @@ export const Field = (
    * undefined (default) | 'email' | 'textarea' 
    */
   //! здесь label должен идти до id
-  { className, label, id = getIdFromTitle(label), type, placeholder, isReq, inputMode, mask }
+  { className, label, id = getIdFromTitle(label), type, placeholder, isReq, inputMode, mask, renderBefore }
 ) => {
   const Component = type === 'textarea' ? 'textarea' : 'input'
   const extraAttrs = {}
-
+  const fieldClass = 'field__control'
   if (mask) { // если в маск что то передали, то в extraAttrs добавляем data-js-input-mask
     extraAttrs['data-js-input-mask'] = mask
   }
@@ -24,7 +24,8 @@ export const Field = (
         )}
       </label>
       <div className='field__body'>
-        <Component className='field__control' type={type} id={id} placeholder={placeholder}
+        {renderBefore?.({ fieldClass })}
+        <Component className={fieldClass} type={type} id={id} placeholder={placeholder}
           required={isReq} inputMode={inputMode} {...extraAttrs} />
       </div>
     </div>

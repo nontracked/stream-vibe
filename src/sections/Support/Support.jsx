@@ -1,6 +1,9 @@
 import { Image } from 'minista'
 import './support.scss'
 import { Field } from '@/components/Field/Field'
+import Checkbox from '@/components/Checkbox'
+import Button from '@/components/Button'
+import Select from '@/components/Select'
 
 export const Support = () => {
   const titleId = 'support-title'
@@ -20,9 +23,24 @@ export const Support = () => {
         <Field className="support__form-cell" label="Last Name" placeholder="Ivanov" />
         <Field className="support__form-cell" label="Email" type="email" placeholder="example@mail.com" isReq />
         <Field className="support__form-cell" label="Phone number" inputMode="tel"
-          placeholder="(999) 999-99-99" mask="(000) 000-00-00" />
+          placeholder="(999) 999-99-99" mask="(000) 000-00-00"
+          renderBefore={(fieldControlClassName ) => (
+            <Select label="Phone number prefix" 
+            buttonClassName={fieldControlClassName }
+            options={[
+              { value: '+7', isSelected: true },
+              { value: '+1' },
+              { value: '+2' },
+              { value: '+3' }
+            ]} />
+          )}
+        />
         <Field className="support__form-cell support__form-cell--wide" label="Message" type="textarea"
           placeholder="Hi! I have a quastions" isReq />
+        <div className='support__form-cell support__form-cell--wide support__form-cell--actions'>
+          <Checkbox className="support__form-agreement" label="I agree with Terms of Use and Privacy Policy" isReq />
+          <Button className="support__form-button" label="Send Message" type='submit' />
+        </div>
       </form>
     </section>
   )

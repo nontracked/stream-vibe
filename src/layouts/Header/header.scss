@@ -84,15 +84,17 @@
     row-gap: 30px;
     transition-duration: var(--transition-duration);
     transition-behavior: allow-discrete;
-    &:not([open]) {
-      opacity: 0;
-      translate: 50%;
-    }
-    &[open] {
-      display: flex;
-      @starting-style {
+    @include tablet {
+      &:not([open]) {
         opacity: 0;
         translate: 50%;
+      }
+      &[open] {
+        display: flex;
+        @starting-style {
+          opacity: 0;
+          translate: 50%;
+        }
       }
     }
     @include tablet-above {

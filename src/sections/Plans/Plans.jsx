@@ -5,13 +5,14 @@ import Grid from '@/components/Grid'
 import { planGroups } from './planGroups'
 import TabsNavigation from '@/components/Tabs/Components/TabsNavigation'
 import Tabs from '@/components/Tabs'
+import classNames from 'classnames'
 
-export const Plans = () => {
+export const Plans = ({className}) => {
   const tabsTitle = "plans-tabs"
   const tabsNavigationId = "plans-tabs-navigation "
 
   return (
-    <section className="plan section container">
+    <section className={classNames(className,'plan section container')}>
       <div className="plan__header">
         <Title
           title="Choose the plan that's right for you"

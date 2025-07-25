@@ -2,7 +2,7 @@ import Logo from '@/components/Logo'
 import cn from 'classnames'
 import './header.scss'
 import Button from '@/components/Button'
-import { Bell, Bookmark, Search } from 'lucide-react';
+import { Bell, Search } from 'lucide-react';
 import BurgerButton from '@/components/BurgerButton';
 export const Header = ({ url }) => {
   const navItems = [
@@ -20,7 +20,7 @@ export const Header = ({ url }) => {
     },
     {
       title: "Subscriptions",
-      href: "/subs"
+      href: "/subscriptions"
     },
   ]
   return (

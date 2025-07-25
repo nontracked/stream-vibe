@@ -15,7 +15,7 @@
         rgba(34, 14, 14, 0.91) 46.72%,
         rgb(205 21 21 / 50%) 100%
       ),
-      url("../src/assets/images/banner/banner.png") center/cover no-repeat;
+      url("@/assets/images/banner/banner.png") center/cover no-repeat;
 
     @include mobile {
       flex-direction: column;
@@ -27,7 +27,7 @@
         rgb(0 0 0 / 88%) 26.72%, 
         rgb(205 21 21 / 50%) 100%
     ),
-        url("../src/assets/images/banner/banner-mobile.png") center/cover no-repeat;
+        url("@/assets/images/banner/banner-mobile.png") center/cover no-repeat;
     }
   }
   &__body {
